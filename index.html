@@ -12,18 +12,29 @@
 
 <h1>Crystals Collector!</h1>
 
-<p>You will be given a random number at the start of the game. <br> There are four crystals below. By clicking on a crystal, you will add a specific amount of points to your total score. <br> You win the game by matching your total schore to the random number. You lose the game if your total score goes above the random number. <br> The value of each crystal is hidden from you until you click on it. <br> Each time when the game starts, the game will change the values of each crystal.</p>
+<p>You will be given a random number at the start of the game. <br> There are four crystals below. By clicking on a crystal, you will add a specific amount of points to your total score. <br> You win the game by matching your total score to the random number. You lose the game if your total score goes above the random number. <br> The value of each crystal is hidden from you until you click on it. <br> Each time when the game starts, the game will change the values of each crystal.</p>
 
-<div class ="randomNum"><span class="targetNum"></span></div>
+<!-- div for target number -->
+<div class ="targetNum"><span id="target"></span></div>
 
+<!-- div for number of wins -->
 <div class = "countWins"> Wins: <span class='wins'></span></div>
 
+<!-- div for number of losses -->
 <div class = "countLosses"> Losses: <span class='losses'></span></div>
 
-<div class = "gemContainer"></div>
+<!-- div for images of gems -->
+<div class="gemContainer">
+<!-- 	<img class="gemImages" id="blueGem" src="assets/images/blueGem.png" alt="blueGem" data-gem-Value="10">
+	<img class="gemImages" src = "assets/images/greenGem.png" alt = "greenGem" data-gem-Value = "gemValue[i]">
+	<img class="gemImages" src = "assets/images/redGem.png" alt = "redGem" data-gem-Value = "gemValue[i]">
+	<img class="gemImages" src = "assets/images/yellowGem.png" alt = "yellowGem" data-gem-Value = "gemValue[i]"> -->
+</div>
 
+<!-- heading for users score -->
 <h3>Your total score is...</h3>
 
+<!-- users current score -->
 <div class = "totalScore"><span class="score"></span></div>
 
 <!-- link to jquery -->
