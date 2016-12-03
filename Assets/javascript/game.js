@@ -22,17 +22,46 @@
 var target = Math.floor(Math.random() * (120-19) +1); 
 	$("#target").text(target); 
 
+// loops through length of images 
+for (var i = 0; i < 4; i++){
 
-var gemImages = ["assets/images/blueGem.png", "assets/images/greenGem.png", "assets/images/yellowGem.png", "assets/images/redGem.png"];
-var index = 0;
-
-for (var i = 0; i < gemImages.length; i++){
-//generates a value 1-12 - to be applied to gems 
-var gemValue = Math.floor(Math.random() * (12-1) +1);
+	//generates a value 1-12 - to be applied to gems 
+	var gemValue = Math.floor(Math.random() * (12-1) +1);
 	console.log(gemValue);
 }
 
-var blueGem = 
+var gemArray = [
+
+		$("<img>").attr("src", "assets/images/blueGem.png").attr('class', "blueGem").attr('data-gem', gemValue[i]);
+
+		// $("<img>").attr("src", "assets/images/greenGem.png").attr('class', "greenGem").attr('data-gem', gemValue[i]),
+		
+		// $("<img>").attr("src-3", "assets/images/yellowGem.png").attr('class', "yellowGem").attr('data-gem', gemValue[i]),
+		
+		// $("<img>").attr("src-4", "assets/images/redGem.png").attr('class', "redGem").attr('data-gem', gemValue[i])];
+
+		$(".gemContainer").append(gemArray);	
+	
+	console.log(gemArray);
+
+	 
+	
+
+	// gemStones.addClass("gem-image gem-color gem-value");
+
+
+// $('#makeButton').on('click', function(){
+//         for(var i=0; i < bands.length; i++){
+//           var button = $('<button>').text('click me').attr('class', 'music').attr('data-band', bands[i]);
+//           $('div').append(button);
+//         }
+//       });
+ 
 
 
 
+
+
+
+//sample image 
+// https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWQJPv3SRb_d1oarO4mz9ITYJEHHR-jVA2q5PyOhTBgB4XDTN-JA
