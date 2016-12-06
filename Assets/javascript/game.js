@@ -43,7 +43,7 @@ var gemArray = [
 		$(".gemContainer").append(gemArray);	
 	
 	console.log(gemArray);
-
+ 
 	 
 	
 

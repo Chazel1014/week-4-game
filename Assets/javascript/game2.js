@@ -8,28 +8,70 @@
 
 //generates random target number 
 var target = Math.floor(Math.random() * (120 - 19) + 1) + 19;
-	$(".targetNum").text(target);
-		
+var wins = 0;
+var losses = 0;
+var yourScore = 0;
+$(".targetNum").text(target);
 
 
 // for (var i = 0; i < 50; i++){
 	//generates random value for the gems 
-	var gemValue; 
+// var gemValue; 
 	// console.log(gemValue);	
 // }
 var crystals = ['assets/images/blueGem.png', 'assets/images/greenGem.png', 'assets/images/redGem.png', 'assets/images/yellowGem.png'];
 
-for (var i = 0; i < crystals.length; i++){
-	gemValue = Math.floor(Math.random() * (12 - 1) + 1) + 1;
-	$('.gemContainer').append('<img class="gemImages" id="blueGem" src="'+crystals[i]+'" alt="blueGem" data-gem-Value="'+gemValue+'">');
-	console.log(gemValue);
+function drawGems(){
+	$('.gemContainer').empty();
+
+	for (var i=0; i < crystals.length; i++){
+		var ranNum = Math.floor(Math.random() * 12) + 1;
+		var img = $('<img>').attr('src', crystals[i]).attr('data-crystalval', ranNum).addClass('crystals');
+		$('.gemContainer').append(img);
+	}
 }
+
+drawGems();
+
+$(document).on('click', '.crystals', function(){
+	yourScore = yourScore + $(this).data('crystalval');
+	$('#yourScore').text(yourScore);
+
+	if (yourScore == target){
+		wins++;
+		$('.countWins').text(wins);
+		alert('you won' + wins);
+		drawGems();
+		target = Math.floor(Math.random() * (120 - 19) + 1) + 19;
+		$(".targetNum").text(target);
+
+		yourScore = 0;
+		$('#yourScore').text(yourScore);
+	}else if (yourScore > target){
+		losses++;
+		$('.countLosses').text(losses);
+		alert('you lose' + losses)
+		drawGems();
+		target = Math.floor(Math.random() * (120 - 19) + 1) + 19;
+		$(".targetNum").text(target);
+		yourScore = 0;
+		$('#yourScore').text(yourScore);
+
+	}
+})
+
+
+// for (var i = 0; i < crystals.length; i++){
+// 	gemValue = Math.floor(Math.random() * (12 - 1) + 1) + 1;
+// 	$('.gemContainer').append('<img class="gemImages" id="blueGem" src="'+crystals[i]+'" alt="blueGem" data-gem-Value="'+gemValue+'">');
+// 	console.log(gemValue);
+// }
 
 // $('.gemImages').each(function( index ) {
 //   console.log( index + ": " + $( this ).text() );
 // });
 //
-var totalScore = "";
+
 
 //click function for gems and their values
 // $(".gemImages").on("click", function() {
@@ -39,11 +81,10 @@ var totalScore = "";
 
 
 		
-var wins = 0;
-var losses = 0;
 
-if (target === totalScore) {
-	wins++; 
-} else if (totalScore > target) {
-	losses++; 
-}
+
+// if (target === totalScore) {
+// 	wins++; 
+// } else if (totalScore > target) {
+// 	losses++; 
+// }
